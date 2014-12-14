@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<servlet>
 		<servlet-name>Rbena</servlet-name>
 		<servlet-class>com.rbena.RbenaServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>Rbena</servlet-name>
 		<url-pattern>/rbena</url-pattern>
@@ -15,13 +20,14 @@
 		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
 		<init-param>
 			<param-name>services</param-name>
-			<param-value/>
+			<param-value />
 		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SystemServiceServlet</servlet-name>
 		<url-pattern>/_ah/spi/*</url-pattern>
 	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>FileUploadServlet</servlet-name>
@@ -31,7 +37,7 @@
 		<servlet-name>FileUploadServlet</servlet-name>
 		<url-pattern>/_ah/fileUpload/*</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>UploadedServlet</servlet-name>
 		<servlet-class>com.rbena.Uploaded</servlet-class>
@@ -40,8 +46,8 @@
 		<servlet-name>UploadedServlet</servlet-name>
 		<url-pattern>/_ah/uploaded/*</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet>
 		<servlet-name>ImageServlet</servlet-name>
 		<servlet-class>com.rbena.ImageServlet</servlet-class>
@@ -50,7 +56,7 @@
 		<servlet-name>ImageServlet</servlet-name>
 		<url-pattern>/_ah/getPic/*</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>UserProfileServlet</servlet-name>
 		<servlet-class>com.rbena.UserProfileServlet</servlet-class>
@@ -59,5 +65,18 @@
 		<servlet-name>UserProfileServlet</servlet-name>
 		<url-pattern>/_ah/uploadCloset/*</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<servlet-name>RestletServlet</servlet-name>
+		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+		<init-param>
+			<param-name>org.restlet.application</param-name>
+			<param-value>com.rbena.rest.SampleApplication</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RestletServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
 </web-app>

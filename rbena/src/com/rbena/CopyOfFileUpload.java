@@ -15,18 +15,13 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 
-import com.google.appengine.api.blobstore.BlobstoreService;
-import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import com.google.appengine.api.datastore.Blob;
 
 public class CopyOfFileUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(CopyOfFileUpload.class
 			.getName());
-	private BlobstoreService blobstoreService = BlobstoreServiceFactory
-			.getBlobstoreService();
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {

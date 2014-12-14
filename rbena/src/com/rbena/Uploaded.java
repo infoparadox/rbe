@@ -27,22 +27,16 @@ public class Uploaded extends HttpServlet {
 		try {
 			List<BlobKey> blobs = blobstoreService.getUploads(req).get("img");
 			BlobKey blobKey = blobs.get(0);
-
 			ImagesService imagesService = ImagesServiceFactory
 					.getImagesService();
 			ServingUrlOptions servingOptions = ServingUrlOptions.Builder
 					.withBlobKey(blobKey);
-
 			String servingUrl = imagesService.getServingUrl(servingOptions);
-
 			resp.setStatus(HttpServletResponse.SC_OK);
 			resp.setContentType("application/json");
-
 			JSONObject json = new JSONObject();
-
 			json.put("servingUrl", servingUrl);
 			json.put("blobKey", blobKey.getKeyString());
-
 			PrintWriter out = resp.getWriter();
 			out.print(json.toString());
 			out.flush();
@@ -50,7 +44,6 @@ public class Uploaded extends HttpServlet {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

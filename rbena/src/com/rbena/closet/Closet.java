@@ -15,7 +15,7 @@ import com.google.appengine.datanucleus.annotations.Unowned;
 @PersistenceCapable(identityType = IdentityType.APPLICATION, detachable = "true")
 public class Closet {
 	public enum CLOSET_TYPE {
-		SUMMER, WINTER, FALL, SPRING, ANYTIME
+		DEFAULT, SPECIAL
 	}
 
 	@PrimaryKey
