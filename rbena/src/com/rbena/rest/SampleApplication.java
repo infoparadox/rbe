@@ -10,8 +10,8 @@ public class SampleApplication extends Application {
 	@Override
 	public Restlet createInboundRoot() {
 		Router router = new Router(getContext());
-		TemplateRoute def = router.attach("/hey", RobeQuery.class);
-		def.setMatchingMode(Template.MODE_EQUALS);
+		// TemplateRoute def = router.attach("/hey/*", RobeQuery.class);
+		// def.setMatchingMode(Template.MODE_EQUALS);
 		// router.attachDefault(RobeQuery.class);
 		// router.attach("/hey", RobeQuery.class);
 		// router.attach("/hey/", RobeQuery.class);

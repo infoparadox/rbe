@@ -39,6 +39,11 @@ public class Costume {
 		CONTEMPORARY, VINTAGE, POLISHED, SPORTY
 	}
 
+	public enum PURCHASE_YEAR{
+		WITHIN_TWO, TWO_FIVE, FIVE_EIGHT, EIGHT_TEN, OLDER, UNKNOWN
+	}
+	
+	
 	public enum Material {
 		COTTON, VELVET, SILK, WOOL, REXIN, LEATHER
 	}
@@ -53,6 +58,10 @@ public class Costume {
 
 	public enum SIZE {
 		XS, S, M, L
+	}
+
+	public enum SEASON {
+		SUMMER, FALL, SPRING, WNTER, AUTUMN
 	}
 
 	public enum GENDER {

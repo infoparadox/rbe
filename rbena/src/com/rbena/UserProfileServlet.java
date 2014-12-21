@@ -1,8 +1,10 @@
 package com.rbena;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.Random;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,8 +57,9 @@ public class UserProfileServlet extends HttpServlet {
 		Set<ImageDetail> images = new HashSet<ImageDetail>();
 		images.add(imgDetail);
 		costume.setImageDetails(images);
-		costume.setLegend(Legend.values()[Legend.values().length
-				% new Random().nextInt(31)]);
+		List<Legend> l = Arrays.asList(Legend.values());
+		Collections.shuffle(l);
+		costume.setLegend(l.get(0));
 		c.addCostume(costume);
 
 		closets.add(c);

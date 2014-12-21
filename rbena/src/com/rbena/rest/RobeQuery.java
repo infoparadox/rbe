@@ -37,11 +37,11 @@ public class RobeQuery extends ServerResource {
 		return fabric.toString();
 	}
 
-	@Get
+	/*@Get
 	@Path("/hey")
 	public String reepresent() {
 		return "Hello **!";
-	}
+	}*/
 
 	@Get
 	@Path("/hey/legends")
